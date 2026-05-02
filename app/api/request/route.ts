@@ -50,14 +50,16 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // 2.5. reCAPTCHA v3 invisible（可选第二层）
+  // 2.5. reCAPTCHA v3 invisible（补充信号；缺 token 默认软放行）
   const minScore = Number(env.RECAPTCHA_MIN_SCORE ?? '0.5');
+  const requireToken = env.RECAPTCHA_REQUIRE_TOKEN === '1';
   const rc = await verifyRecaptcha(
     body.recaptchaToken,
     env.RECAPTCHA_SECRET,
     'request',
     ip,
     minScore,
+    requireToken,
   );
   if (!rc.success) {
     return NextResponse.json(
