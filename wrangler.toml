@@ -6,7 +6,7 @@ pages_build_output_dir = ".vercel/output/static"
 [[d1_databases]]
 binding = "DB"
 database_name = "ldinvihub"
-database_id = "PLACEHOLDER_RUN_wrangler_d1_create"
+database_id = "e3de799a-0c08-4425-b278-14c2d2cf2836"
 
 [ai]
 binding = "AI"
@@ -18,4 +18,4 @@ AI_MODEL_FALLBACK = "@cf/qwen/qwen1.5-7b-chat-awq"
 RECAPTCHA_MIN_SCORE = "0.5"
 # 公开的 site key 写在这里；secret 通过 `wrangler pages secret put` 注入
 TURNSTILE_SITE_KEY = "0x4AAAAAADHpXuhq2lCspP1J"
-# RECAPTCHA_SITE_KEY = "<paste-when-ready>"
+RECAPTCHA_SITE_KEY = "6LfRd9UsAAAAAGMMAUBx0XeSqEA0zJMoX1A8BVps"
