@@ -1,0 +1,37 @@
+{
+  "name": "ldinvihub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:dev": "wrangler pages dev .vercel/output/static --d1=DB --ai=AI --compatibility-flag=nodejs_compat",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --project-name=ldinvihub",
+    "db:init:local": "wrangler d1 execute ldinvihub --file=schema.sql --local",
+    "db:init:remote": "wrangler d1 execute ldinvihub --file=schema.sql --remote"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.54.0",
+    "@fluentui/react-icons": "^2.0.245",
+    "@marsidev/react-turnstile": "^1.0.2",
+    "lucide-react": "^0.460.0",
+    "next": "15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.5",
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "typescript": "^5",
+    "vercel": "^37.14.0",
+    "wrangler": "^3.84.0"
+  }
+}

@@ -1,0 +1,21 @@
+name = "ldinvihub"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ldinvihub"
+database_id = "PLACEHOLDER_RUN_wrangler_d1_create"
+
+[ai]
+binding = "AI"
+
+[vars]
+SCORE_THRESHOLD = "75"
+AI_MODEL_PRIMARY = "@cf/qwen/qwen1.5-14b-chat-awq"
+AI_MODEL_FALLBACK = "@cf/qwen/qwen1.5-7b-chat-awq"
+RECAPTCHA_MIN_SCORE = "0.5"
+# 公开的 site key 写在这里；secret 通过 `wrangler pages secret put` 注入
+TURNSTILE_SITE_KEY = "0x4AAAAAADHpXuhq2lCspP1J"
+# RECAPTCHA_SITE_KEY = "<paste-when-ready>"
